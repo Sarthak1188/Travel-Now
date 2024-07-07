@@ -1,0 +1,141 @@
+@media (max-width: 1024px) {
+  .container {
+    padding: 0.1rem;
+  }
+  .swiper {
+    height: 90vh;
+  }
+  .img-overlay p::first-letter {
+    font-size: 30px;
+  }
+
+  .img-overlay p + h2 {
+    font-size: 30px;
+  }
+  .img-overlay h2 ~ h2 {
+    font-size: 40px;
+    letter-spacing: 0.1px;
+  }
+}
+
+@media (max-width: 900px) {
+  /* header section */
+  .btn {
+    display: block;
+  }
+  nav ul {
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    left: 0;
+    top: -600px;
+    padding: 3rem 1rem;
+    transition: all 0.5s ease-in;
+  }
+  nav ul li a {
+    display: block;
+    margin: 1px;
+    padding: 14px;
+  }
+
+  .close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 25px;
+  }
+  nav ul.display {
+    top: 0;
+    transition: all 0.5s ease-in;
+  }
+  nav ul li::before {
+    top: 45px;
+    left: 10px;
+  }
+  nav ul li:hover::before {
+    opacity: 1;
+    width: 15%;
+  }
+
+  /* main section */
+  .img-overlay p::first-letter {
+    font-size: 20px;
+  }
+
+  .img-overlay p + h2 {
+    font-size: 20px;
+  }
+  .img-overlay h2 ~ h2 {
+    font-size: 30px;
+    letter-spacing: 0.1px;
+  }
+  .swiper {
+    height: 80vh;
+  }
+  /* location */
+  #Location-search {
+    transform: translateY(0%);
+    margin: 32px 0;
+  }
+  .form-wrapper form {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* About Section */
+  .about-content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .agency-right-side .img img {
+    width: 95%;
+  }
+  .agency-right-side .img::after {
+    top: 15px;
+    left: 15px;
+    bottom: 0;
+    right: 0;
+    width: 90%;
+  }
+  /* Choose Place */
+
+  .choose-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .row-wise-img {
+    grid-template-columns: 1fr;
+  }
+
+  .img-content {
+    bottom: 10px;
+  }
+
+  /* Static Counter */
+
+  .static-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Videos */
+  #himalyas {
+    padding: 2rem 0;
+    position: relative;
+  }
+  .video-content h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+  .video-content span {
+    font-size: 1rem;
+  }
+
+  /* travel countries start */
+  .travel-places-wrapper {
+    grid-template-columns: 2fr;
+  }
+  .Aadibadri-content {
+    grid-template-columns: 2fr;
+  }
+}

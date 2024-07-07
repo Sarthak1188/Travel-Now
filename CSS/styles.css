@@ -1,0 +1,741 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,500&display=swap");
+
+:root {
+  --primary-color: #2095ae;
+  --white-color: #fff;
+  --light-grey-color: #ddd;
+  --blue-color: #0f2454;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+/* ============= Utality Classes Start ================ */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.heading-normal-txt {
+  font-size: 1rem;
+  letter-spacing: 6px;
+  color: var(--primary-color);
+}
+
+.headings {
+  font-size: 3rem;
+  font-family: "Times New Roman", Times, serif;
+  padding-bottom: 2rem;
+  letter-spacing: 2px;
+}
+.headings span {
+  color: var(--primary-color);
+}
+.secondary-headings {
+  font-size: 2.5rem;
+  font-family: "Times New Roman", Times, serif;
+  padding: 1rem 0;
+}
+.lead {
+  font-size: 1.1rem;
+  line-height: 2;
+  text-align: justify;
+}
+.primary-btn {
+  width: 50%;
+  outline: none;
+  background-color: var(--primary-color);
+  border: none;
+  padding: 0.7rem;
+  font-size: 1 rem;
+  border-radius: 4px;
+  color: var(--white-color);
+  cursor: pointer;
+}
+/* ============= Utality Classes close ================ */
+
+/* ====================== Header Start ==================== */
+header {
+  background: rgba(255, 255, 255, 0.1);
+
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  transition: all 0.5s ease-in-out;
+}
+
+header.sticky {
+  background: rgba(29, 12, 12, 0.973);
+}
+
+.logo p {
+  font-size: 30px;
+  font-weight: 700;
+  color: #dcdcdc;
+}
+.logo p::first-letter {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 30px;
+  position: relative;
+}
+
+nav ul li a {
+  color: var(--white-color);
+  font-size: 1.1rem;
+}
+
+nav ul li::before {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 0px;
+  height: 5px;
+  background-color: rgb(157, 197, 183);
+  opacity: 0;
+  transition: all 0.2s ease-in;
+}
+
+nav ul li a:hover {
+  color: aquamarine;
+}
+
+nav ul li:hover::before {
+  opacity: 1;
+  width: 100%;
+}
+
+.btn {
+  font-size: 25px;
+  color: var(--white-color);
+  cursor: pointer;
+  display: none;
+}
+
+/* ====================== Header close ==================== */
+
+/* ====================== Main open ======================== */
+main {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.swiper {
+  height: 100vh;
+}
+.slide-container {
+  width: 100%;
+}
+.slide-container img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.img-overlay {
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+}
+
+.img-overlay p {
+  font-size: 20px;
+  animation: animate 4s forwards;
+}
+.img-overlay p::first-letter {
+  font-size: 30px;
+}
+
+.img-overlay p + h2 {
+  font-size: 40px;
+  font-weight: 400;
+  animation: animate 4s forwards;
+  transition: all 0.5s ease-in-out;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--white-color);
+}
+.img-overlay h2 ~ h2 {
+  font-size: 50px;
+  padding-bottom: 10px;
+  animation: animate 4s forwards;
+  transition: all 0.5s ease-in-out;
+}
+
+/* ! For silder effect Start */
+.overlay {
+  position: relative;
+}
+.overlay::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+/* Making animation for the paragraph tag, Heading tags */
+@keyframes animate {
+  0% {
+    transform: translatez(-100%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translatez(-0%);
+    opacity: 1;
+  }
+}
+/*  Animation Ending */
+/* ! For silder effect Start */
+
+/* ====================== Main Close ======================= */
+
+/* ====================== Search Loaction Start ======================= */
+#Location-search {
+  transform: translateY(-150%);
+}
+.form-wrapper {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 2rem;
+  width: 100%;
+}
+.form-wrapper form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-control {
+  width: 100%;
+}
+form input,
+select {
+  padding: 10px;
+  outline: none;
+  background: none;
+  color: white;
+  font-size: 1.1 rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 0.4rem;
+  border-radius: 4px;
+}
+form input::placeholder {
+  color: white;
+}
+form input:hover {
+  border: 1px solid #fff;
+  box-shadow: 0px 6px 6px rgba(255, 255, 255, 0.1);
+}
+form select:hover {
+  border: 1px solid #fff;
+  box-shadow: 0px 6px 6px rgba(255, 255, 255, 0.1);
+}
+.form-control option {
+  color: black;
+}
+
+/* ====================== Search Loaction end ======================= */
+
+/* ===================== About Start Start ========================== */
+.about-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 3rem;
+  margin: 3rem 0;
+}
+.about-content h2 span {
+  color: var(--primary-color);
+  font-family: "Times New Roman", Times, serif;
+}
+.about-content ul {
+  list-style: none;
+}
+
+.about-content ul .icons {
+  display: flex;
+  align-items: center;
+}
+
+.about-content ul .icons i {
+  background-color: #2095ae;
+  padding: 14px;
+  border-radius: 50%;
+  color: white;
+  margin: 5px 20px 5px 5px;
+}
+
+.agency-right-side .img {
+  position: relative;
+}
+.agency-right-side .img img {
+  width: 75%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+  transition: 0.5s ease-in;
+}
+
+.agency-right-side .img::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 75px;
+  bottom: 0;
+  right: 0;
+  background: var(--primary-color);
+  width: 70%;
+  height: 100%;
+  z-index: -2;
+}
+
+.agency-right-side .img img:hover {
+  transform: scale(0.95);
+  transition: 0.5s ease-in;
+}
+
+/* ===================== About Start Start ========================== */
+
+/* ===================== Choose Your Place Start ========================== */
+#choose-place {
+  padding: 6rem 0;
+}
+
+.choose-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2rem;
+}
+
+.ig-img {
+  position: relative;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.ig-img img {
+  height: 65vh;
+  object-fit: cover;
+}
+
+.ig-img:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.ig-img:hover {
+  transform: scale(1.02);
+}
+
+.img-content {
+  position: absolute;
+  bottom: 20px;
+}
+
+.img-content h2 {
+  padding: 0.2rem;
+  color: var(--white-color);
+}
+
+.hidden-content {
+  padding: 0.5rem 2rem;
+  color: var(--white-color);
+  transform: translateY(120%);
+  transition: all 0.5s ease-in-out;
+}
+
+.hidden-content i {
+  padding: 0.2rem 0.2rem 0 0;
+}
+
+.ig-img:hover .hidden-content {
+  transform: translateY(0%);
+}
+
+.price-label {
+  background: var(--primary-color);
+  color: var(--white-color);
+  padding: 0.5rem 1rem;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  transform: rotate(-90deg);
+}
+
+.row-wise-img {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin: 1rem 0;
+}
+/* ===================== Choose Your Place End ========================== */
+
+/* ===================== Static Counter start ========================== */
+#static-counter {
+  padding: 6rem 0;
+  background: url(/IMAGES/19.jpg) no-repeat center center/cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 4;
+}
+
+#static-counter::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.static-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  padding: 2rem 0;
+}
+
+.static-icons {
+  color: #fff;
+  cursor: pointer;
+}
+
+.static-icons i {
+  font-size: 3rem;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 50%;
+  border: 4px solid var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.numbers {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.static-icons i:hover {
+  background: var(--primary-color);
+  border: none;
+  transform: translateY(20px);
+}
+/* ===================== Static Counter start ========================== */
+
+/*-- ================== Top Destination Start ====================== -- */
+
+#top-destination {
+  padding: 6rem 0;
+  margin: 2rem 0;
+}
+
+.top-destination-wrapper {
+  width: 100%;
+  height: 60vh;
+}
+
+.carousel {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.5 ease-in-out;
+}
+
+.carousel:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-img-overlay {
+  width: 100%;
+}
+
+.hidden-content-carousel {
+  padding: 0.5rem 2rem;
+  color: var(--white-color);
+  transform: translateY(120%);
+  transition: all 0.5 ease-in-out;
+}
+
+.carousel-img-overlay i {
+  padding-right: 1rem;
+}
+
+.carousel:hover .hidden-content-carousel {
+  transform: translateY(0%);
+}
+
+.carousel:hover {
+  transform: scale(1.2);
+}
+
+/*-- ================== Top Destination End ====================== -- */
+
+/*  ==================== Video Background start ====================== */
+
+#himalyas {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.video-bg {
+  position: relative;
+}
+
+.video-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#himalyas video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-height: 650px;
+}
+
+.video-content {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  text-align: center;
+  color: var(--white-color);
+}
+
+.video-content h2 {
+  font-size: 40px;
+  letter-spacing: 4px;
+  color: var(--white-color);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
+}
+
+.video-content span {
+  font-size: 1rem;
+  margin: 0 1.5rem;
+}
+/*  ==================== Video Background end ======================  */
+
+/* <!-- ==================== Travel Places Start ======================== --> */
+
+#travel-places {
+  padding: 6rem 0;
+}
+
+.travel-places-wrapper {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  width: 100%;
+  grid-gap: 2rem;
+}
+
+.places-content {
+  margin-top: 2rem;
+}
+
+.carousel img {
+  height: 450px;
+}
+
+.places-content ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem;
+}
+
+.places-content ul li {
+  margin: 1rem 0.5rem;
+}
+
+.slider-content-wrapper {
+  overflow: hidden;
+}
+
+/* Aadibadri Content */
+.Aadibadri-content {
+  padding: 8rem 0;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  width: 100%;
+  grid-gap: 2rem;
+}
+.blogs img {
+  height: 450px;
+}
+/* <!-- ==================== Travel Places End ======================== --> */
+
+/* <!-- ==================== Travel Blog Start ======================== --> */
+
+#travel-blog {
+  background: var(--blue-color);
+  padding: 6rem 0;
+}
+
+.blog h2 {
+  color: var(--light-grey-color);
+}
+
+.blog {
+  position: relative;
+}
+
+.blog:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.blog-img-overlay {
+  width: 100%;
+}
+
+.blog-img-content {
+  position: absolute;
+  bottom: 20px;
+}
+
+.blog-img-content {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  padding: 2rem 1rem;
+  transition: all 0.3s ease-in;
+  transform: translateY(-50%);
+  color: var(--white-color);
+}
+
+.blog:hover .blog-img-content {
+  transform: translateY(0%);
+}
+
+/* <!-- ==================== Travel Blog End ======================== --> */
+/* ==========================Footer Start============================= */
+.py-4 {
+  background: var(--primary-color);
+  padding: 1rem;
+}
+
+.footer-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.footer-item {
+  padding: 1rem;
+  margin: 2rem;
+  border-right: 1px solid rgb(189, 180, 229);
+}
+
+.site-brand {
+  font-size: 3rem;
+  text-decoration: none;
+}
+
+.footer-item p {
+  font-size: 12px;
+}
+
+.footer-item h2 {
+  font-size: 2rem;
+}
+.footer-item li {
+  font-size: 1rem;
+}
+
+.footer-item a {
+  font-size: 1rem;
+}
